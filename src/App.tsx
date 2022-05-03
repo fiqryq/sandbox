@@ -5,10 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
-    <Layout>
-      <h1 className="my-5 border-b-[1px] pb-5 text-center text-4xl font-bold">
-        📦 sandbox.
-      </h1>
+    <Layout title="📦 sandbox.">
       <Button />
       <Footer />
       <ToastContainer
