@@ -7,7 +7,7 @@ function App() {
   return (
     <Layout>
       <h1 className="my-5 border-b-[1px] pb-5 text-center text-4xl font-bold">
-        📦 sanbox.
+        📦 sandbox.
       </h1>
       <Button />
       <Footer />
