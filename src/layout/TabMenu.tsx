@@ -1,6 +1,7 @@
 import { Fragment, ReactNode } from "react";
 import { Tab } from "@headlessui/react";
 type ITabMenu = {
+  titleTab: [] | any;
   components: ReactNode;
   code: ReactNode;
 };
@@ -20,7 +21,7 @@ export const TabMenu = (props: ITabMenu) => {
             }
           `}
               >
-                Components
+                {props.titleTab[0]}
               </div>
             )}
           </Tab>
@@ -35,14 +36,18 @@ export const TabMenu = (props: ITabMenu) => {
             }
           `}
               >
-                Code
+                {props.titleTab[1]}
               </div>
             )}
           </Tab>
         </div>
       </Tab.List>
       <Tab.Panels>
-        <Tab.Panel>{props.components}</Tab.Panel>
+        <Tab.Panel>
+          <div className="rounded-lg bg-gray-100/50 p-5">
+            {props.components}
+          </div>
+        </Tab.Panel>
         <Tab.Panel>{props.code}</Tab.Panel>
       </Tab.Panels>
     </Tab.Group>
