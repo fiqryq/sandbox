@@ -29,8 +29,13 @@ ReactDOM.render(
         maskArea: (base) => ({ ...base, rx: 10 }),
         maskWrapper: (base) => ({ ...base, color: "#773EFD" }),
         badge: (base) => ({ ...base, left: "auto", right: "-0.8125em" }),
-        controls: (base) => ({ ...base, marginTop: 100 }),
         close: (base) => ({ ...base, right: "auto", left: 8, top: 8 }),
+      }}
+      onClickMask={({ setCurrentStep, currentStep, setIsOpen }) => {
+        if (currentStep === step.length - 1) {
+          setIsOpen(false);
+        }
+        setCurrentStep((s) => (s === step.length - 1 ? 0 : s + 1));
       }}
       steps={step}
     >

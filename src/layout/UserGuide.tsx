@@ -2,13 +2,11 @@ import { Highlight } from "../utils/Highlight";
 import { Section } from "../layout/template/Section";
 import { TabMenu } from "../layout/template/TabMenu";
 import { useTour } from "@reactour/tour";
-import { TourProvider } from "@reactour/tour";
 
 export const UserGuide = () => {
   const { setIsOpen } = useTour();
 
   const code = ` 
-
   // index.tsx
   import { TourProvider } from "@reactour/tour";
 
