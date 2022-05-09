@@ -1,12 +1,12 @@
-import { Button } from "./components/Button";
 import { Footer } from "./layout/Footer";
-import { Layout } from "./layout/Layout";
+import { Layout } from "./layout/template/Layout";
 import { ToastContainer } from "react-toastify";
+import { ButtonSection } from "./layout/ButtonSection";
 
 function App() {
   return (
     <Layout title="📦 sandbox.">
-      <Button />
+      <ButtonSection />
       <Footer />
       <ToastContainer
         position="bottom-center"
