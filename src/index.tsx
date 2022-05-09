@@ -4,10 +4,38 @@ import "./css/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { TourProvider } from "@reactour/tour";
+
+const step = [
+  {
+    selector: "#first-step",
+    content: "This is my first Step",
+  },
+  {
+    selector: "#second-step",
+    content: "This is my Second Step",
+  },
+];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TourProvider
+      styles={{
+        popover: (base) => ({
+          ...base,
+          "--reactour-accent": "#773EFD",
+          borderRadius: 10,
+        }),
+        maskArea: (base) => ({ ...base, rx: 10 }),
+        maskWrapper: (base) => ({ ...base, color: "#773EFD" }),
+        badge: (base) => ({ ...base, left: "auto", right: "-0.8125em" }),
+        controls: (base) => ({ ...base, marginTop: 100 }),
+        close: (base) => ({ ...base, right: "auto", left: 8, top: 8 }),
+      }}
+      steps={step}
+    >
+      <App />
+    </TourProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
